@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>利用border绘制图形</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		body {
+			margin: 20px;
+		}
+		section {
+			width: 100px;
+			height: 100px;
+			margin: 20px;
+			/*background: #ccc;*/
+		}
+	</style>
+</head>
+<body>
+
+	<p>直角三角形</p>
+	<section class="triangle1">
+		<style>
+			#triangle1 {
+				width: 0;
+				height: 0;
+				border-right: 50px solid transparent; 
+				border-bottom: 50px solid red;
+			}
+		</style>
+		<div id="triangle1"></div>
+	</section>
+
+	<p>等腰三角形</p>
+	<section class="triangle2">
+		<style>
+			#triangle2 {
+				width: 0;
+				height: 0;
+				border-bottom: 50px solid red;
+				border-left: 50px solid transparent;
+				border-right: 50px solid transparent;
+			}
+		</style>
+		<div id="triangle2"></div>
+	</section>
+
+	<p>两个三角形叠加</p>
+	<section class="triangle3">
+		<style>
+			.triangle3 {
+				position: relative;
+			}
+			#triangle3 {
+				width: 0;
+				height: 0;
+				border-bottom: 50px solid red;
+				border-left: 50px solid transparent;
+				border-right: 50px solid transparent;
+			}
+			#triangle3:after {
+				content: '';
+				display: block;
+				width: 0;
+				height: 0;
+				position: absolute;
+				top: 10px;
+				left: 0;
+				border-bottom: 50px solid #fff;
+				border-left: 50px solid transparent;
+				border-right: 50px solid transparent;
+			}
+		</style>
+		<div id="triangle3"></div>
+	</section>
+
+	<p>等腰梯形</p>
+	<section class="trapezoid">
+		<style>
+			#trapezoid {
+				width: 40px;
+				height: 0;
+				border-bottom: 50px solid red;
+				border-left: 30px solid transparent;
+				border-right: 30px solid transparent;
+			}
+		</style>
+		<div id="trapezoid"></div>
+	</section>
+
+	<p>直角梯形</p>
+	<section class="trapezoid">
+		<style>
+			#trapezoid2 {
+				width: 40px;
+				height: 0;
+				border-bottom: 50px solid red;
+				border-right: 30px solid transparent;
+			}
+		</style>
+		<div id="trapezoid2"></div>
+	</section>
+
+	<p>菱形</p>
+	<section class="lozenge">
+		<style>
+			.lozenge {
+				position: relative;
+			}
+			#lozenge {
+				width: 50px;
+				height: 50px;
+				background: red;
+				transform: rotate(45deg);
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+			}
+		</style>
+		<div id="lozenge"></div>
+	</section>
+
+	<p>平行四边形</p>
+	<section class="parallelogram">
+		<style>
+			#parallelogram {
+				width: 80px;
+				height: 50px;
+				position: relative;
+				background: red;
+				transform: skew(-35deg);
+			}
+			/*#parallelogram:after {
+				content: '';
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				z-index: -1;
+				transform: skew(35deg);
+				background: red;
+			}*/
+		</style>
+		<div id="parallelogram"></div>
+	</section>
+
+	<p>五角星</p>
+	<section class="wujiaoxing">
+		<style>
+			.wujiaoxing {
+				position: relative;
+				width: 0;
+				height: 0;
+				border-top: 36px solid red;
+				border-left: 50px solid transparent;
+				border-right: 50px solid transparent;
+			}
+			#wujiaoxing:before {
+				content: '';
+				position: absolute;
+				top: -37px;
+				left: -49px;
+				border-top: 36px solid red;
+				border-left: 50px solid transparent;
+				border-right: 50px solid transparent;
+				transform: rotate(72deg);
+				transform-origin: 50% 50%;
+			}
+			#wujiaoxing:after {
+				content: '';
+				position: absolute;
+				top: -39px;
+				left: -49px;
+				border-top: 36px solid red;
+				border-left: 50px solid transparent;
+				border-right: 50px solid transparent;
+				transform: rotate(144deg);
+				transform-origin: 50% 50%;
+			}
+		</style>
+		<div id="wujiaoxing"></div>
+	</section>
+
+	<p>六角形</p>
+	<section class="liujiaoxing">
+		<style>
+			.liujiaoxing {
+				position: relative;
+			}
+			#liujiaoxing {
+				width: 0;
+				height: 0;
+				border-bottom: 80px solid red;
+				border-left: 50px solid transparent;
+				border-right: 50px solid transparent;
+			}
+			#liujiaoxing:before {
+				content: '';
+				position: absolute;
+				top: 25px;
+				left: 0;
+				border-top: 80px solid red;
+				border-left: 50px solid transparent;
+				border-right: 50px solid transparent;
+			}
+		</style>
+		<div id="liujiaoxing"></div>
+	</section>
+
+	<p>心形</p>
+	<section class="heart">
+		<style>
+			.heart {
+				position: relative;
+				margin: 30px;
+				width: 500px;
+				height: 500px;
+			}
+			#heart {
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: relative;
+				transform: rotate(45deg);
+			}
+			#heart:before {
+				content: '';
+				width: 50px;
+				height: 100px;
+				position: absolute;
+				left: -49px;
+				top: 0;
+				background: red;
+				border-radius: 50px 0 0 50px;
+			}
+			#heart:after {
+				content: '';
+				width: 100px;
+				height: 50px;
+				position: absolute;
+				left: 0;
+				top: -49px;
+				background: red;
+				border-radius: 50px 50px 0 0;
+			}
+		</style>
+		<div id="heart"></div>
+	</section>
+</body>
+</html>
